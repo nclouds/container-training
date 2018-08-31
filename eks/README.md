@@ -123,12 +123,58 @@ kubectl get all
 
 ### Exercise 5
 
+Add Worker Nodes (Node Group)
 
+Follow Instructions
+
+Give Permission
+
+
+```
+cd misc
+#modify file
+kubectl apply -f aws-auth-cm.yaml
+```
+
+Watch your nodes
+
+```
+kubectl get nodes --watch
+```
 
 ### Exercise 6
 
+Add Two ECR Repostories 
+
+Follow Instructions
+
+Push Docker Images to ECR
+
+```
+$(aws ecr get-login --no-include-email --region us-west-2)
+docker tag postgres:9.6 696914201735.dkr.ecr.us-west-2.amazonaws.com/<POSTGRES-REPO-NAME>:latest
+docker push postgres:9.6 696914201735.dkr.ecr.us-west-2.amazonaws.com/<POSTGRES-REPO-NAME>:latest
+
+docker tag containerize-application_petstore:latest 696914201735.dkr.ecr.us-west-2.amazonaws.com/<PETSTORE-REP>:latest
+docker push containerize-application_petstore:latest 696914201735.dkr.ecr.us-west-2.amazonaws.com/<PETSTORE-REP>:latest
+
+```
 
 ### Exercise 7
+
+```
+cd petstore-manifest
+#modify
+kubectl apply -f petstore-eks-manifest.yaml
+```
+
+Cleanup deployment
+```
+kubectl delete deployment frontend
+kubectl delete deployment postgres
+kubectl delete service frontend
+kubectl delete service postgres
+```
 
 
 
