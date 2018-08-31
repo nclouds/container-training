@@ -127,6 +127,7 @@ Add Worker Nodes (Node Group)
 
 Follow Instructions
 CF Template - https://amazon-eks.s3-us-west-2.amazonaws.com/cloudformation/2018-08-30/amazon-eks-nodegroup.yaml
+AMI ID - ami-08cab282f9979fc7a
 
 Give Permissions for Worker Nodes to join cluster
 
