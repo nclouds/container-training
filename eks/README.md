@@ -126,6 +126,7 @@ kubectl get all
 Add Worker Nodes (Node Group)
 
 Follow Instructions
+CF Template - https://amazon-eks.s3-us-west-2.amazonaws.com/cloudformation/2018-08-30/amazon-eks-nodegroup.yaml
 
 Give Permissions for Worker Nodes to join cluster
 
