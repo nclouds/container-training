@@ -127,13 +127,14 @@ Add Worker Nodes (Node Group)
 
 Follow Instructions
 
-Give Permission
+Give Permissions for Worker Nodes to join cluster
 
 
 ```
 cd misc
 #modify file
 kubectl apply -f aws-auth-cm.yaml
+
 ```
 
 Watch your nodes
@@ -155,8 +156,8 @@ $(aws ecr get-login --no-include-email --region us-west-2)
 docker tag postgres:9.6 696914201735.dkr.ecr.us-west-2.amazonaws.com/<POSTGRES-REPO-NAME>:latest
 docker push postgres:9.6 696914201735.dkr.ecr.us-west-2.amazonaws.com/<POSTGRES-REPO-NAME>:latest
 
-docker tag containerize-application_petstore:latest 696914201735.dkr.ecr.us-west-2.amazonaws.com/<PETSTORE-REP>:latest
-docker push containerize-application_petstore:latest 696914201735.dkr.ecr.us-west-2.amazonaws.com/<PETSTORE-REP>:latest
+docker tag containerize-application_petstore:latest 696914201735.dkr.ecr.us-west-2.amazonaws.com/<PETSTORE-REPO>:latest
+docker push containerize-application_petstore:latest 696914201735.dkr.ecr.us-west-2.amazonaws.com/<PETSTORE-REPO>:latest
 
 ```
 
