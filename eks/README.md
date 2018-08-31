@@ -149,20 +149,22 @@ kubectl get nodes --watch
 
 Add Two ECR Repostories 
 
+```
 <username>-postgres
 <username>-petstore
-
+```
 
 
 Push Docker Images to ECR
 
 ```
 $(aws ecr get-login --no-include-email --region us-west-2)
-docker tag postgres:9.6 696914201735.dkr.ecr.us-west-2.amazonaws.com/<POSTGRES-REPO-NAME>:latest
-docker push postgres:9.6 696914201735.dkr.ecr.us-west-2.amazonaws.com/<POSTGRES-REPO-NAME>:latest
 
-docker tag petstore_petstore:latest 696914201735.dkr.ecr.us-west-2.amazonaws.com/<PETSTORE-REPO>:latest
-docker push petstore_petstore:latest 696914201735.dkr.ecr.us-west-2.amazonaws.com/<PETSTORE-REPO>:latest
+docker tag postgres:9.6 <REPO>/<POSTGRES-REPO-NAME>:latest
+docker push <REPO>/<POSTGRES-REPO-NAME>:latest
+
+docker tag petstore_petstore:latest <REPO>/<PETSTORE-REPO>:latest
+docker push <REPO>/<PETSTORE-REPO>:latest
 
 ```
 
